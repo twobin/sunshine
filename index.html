@@ -3,7 +3,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <head>
   <meta charset="UTF-8">
-  <title>sunshine</title>
+  <link rel="stylesheet" href="./photo.css">
+  <script type="text/javascript" src="./jquery.js"></script>
+  <script type="text/javascript" src="./functions.js"></script>
+  <title>love sunshine</title>
   <style>
     body {
       color: #383838 !important;
@@ -19,10 +22,36 @@
     .resize-sensor {
       opacity: 0;
     }
+    .messages {
+      position: absolute;
+      width: 300px;
+      height: 30px;
+      top: 80px;
+      left: 25px;
+      right: 0;
+      margin: auto;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <div id="content"></div>
+  <div class="messages">
+    <!-- <p class="info">小太阳, 彼此相识至今：<p> -->
+    <div id="elapseClock"></div>
+  </div>
+  <div id="timelineContent"></div>
+  <script type="text/javascript">
+    var together = new Date();
+    together.setFullYear(2016, 09, 20);
+    together.setHours(0);
+    together.setMinutes(0);
+    together.setSeconds(0);
+    together.setMilliseconds(0);
+    timeElapse(together);
+    setInterval(function () {
+      timeElapse(together);
+    }, 500);
+  </script>
   <script src="./main/all.js"></script>
 </body>
 </html>

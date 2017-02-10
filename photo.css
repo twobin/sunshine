@@ -1,0 +1,37 @@
+#timelineContent .text-center .container {
+  perspective: 1000;
+}
+.flipperRotateY {
+  transform: rotateY(180deg);
+}
+#timelineContent .text-center .container, .front, .back {
+	width: 600px;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+}
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
